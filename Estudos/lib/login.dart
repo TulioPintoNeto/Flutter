@@ -68,7 +68,18 @@ class _LoginState extends State<Login> {
             Navigator.of(context).pushReplacementNamed('/home');
           }
         },
-        child: Text("Login"),
+        color: Colors.indigoAccent,
+        child: Container(
+          width: 250,
+          child: Text(
+            "Login",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white70,
+              fontSize: 15,
+            ),
+          ),
+        ),
       ),
     );
   }
