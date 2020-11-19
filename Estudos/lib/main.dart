@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< Updated upstream
+=======
+import 'home.dart';
+import 'login.dart';
+
+>>>>>>> Stashed changes
 void main() {
   runApp(MyApp());
 }
@@ -9,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< Updated upstream
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -112,6 +119,10 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+=======
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: Login(),
+>>>>>>> Stashed changes
     );
   }
 }
