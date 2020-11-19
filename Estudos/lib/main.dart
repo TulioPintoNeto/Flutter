@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-// Import do Login, lá está o import do Home que redireciona para ele
+// Imports das páginas importantes para as rotas
 import 'login.dart';
+import 'home.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
       /* Aqui chamamos a tela de Login (é necessário mais tarde fazer uma 
       *  verificação se já está logado para redirecionar para Home)
       */
-      home: Login(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Login(),
+        '/home': (context) => Home(),
+      },
     );
   }
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'home.dart';
-
 class Login extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -58,9 +56,8 @@ class _LoginState extends State<Login> {
                 child: RaisedButton(
                   onPressed: () {
                     if (email == "teste@gmail.com" && password == "123456") {
-                      Navigator.of(context).push(
-                          // Redireciona para Home
-                          MaterialPageRoute(builder: (context) => Home()));
+                      // Redireciona para Home
+                      Navigator.of(context).pushReplacementNamed('/home');
                     }
                   },
                   child: Text("Login"),
