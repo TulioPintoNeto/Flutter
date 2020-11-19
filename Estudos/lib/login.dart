@@ -27,6 +27,9 @@ class _LoginState extends State<Login> {
         decoration: InputDecoration(
           labelText: "E-mail",
           border: OutlineInputBorder(),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white70),
+          ),
         ),
       ),
     );
@@ -44,6 +47,9 @@ class _LoginState extends State<Login> {
         decoration: InputDecoration(
           labelText: "Password",
           border: OutlineInputBorder(),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white70),
+          ),
         ),
       ),
     );
@@ -70,23 +76,30 @@ class _LoginState extends State<Login> {
     return Container(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Logo
-            Container(
-              width: 100,
-              height: 100,
-              child: Image.asset('images/logo.png'),
-            ),
-            Container(height: 30),
-            // Campo de e-mail
-            _inputEmail(),
-            // Campo de password
-            _inputPass(),
-            // Campo do botão de login
-            _buttonLogin(),
-          ],
+        child: Theme(
+          data: ThemeData(
+            primaryColor: Colors.white70,
+            primaryColorDark: Colors.white70,
+            hintColor: Colors.white70,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Logo
+              Container(
+                width: 100,
+                height: 100,
+                child: Image.asset('images/logo.png'),
+              ),
+              Container(height: 30),
+              // Campo de e-mail
+              _inputEmail(),
+              // Campo de password
+              _inputPass(),
+              // Campo do botão de login
+              _buttonLogin(),
+            ],
+          ),
         ),
       ),
     );
