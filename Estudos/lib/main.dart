@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< Updated upstream
 //import 'home.dart';
+=======
+>>>>>>> Stashed changes
 import 'login.dart';
 
 void main() {
@@ -14,7 +17,11 @@ class MyApp extends StatelessWidget {
     // MaterialApp auxilia na estilização do aplicativo
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
+<<<<<<< Updated upstream
       home: _Login(),
+=======
+      home: Login(),
+>>>>>>> Stashed changes
     );
   }
 }

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< Updated upstream
+=======
+import 'home.dart';
+
+>>>>>>> Stashed changes
 class Login extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -48,7 +53,16 @@ class _LoginState extends State<Login> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 30.0),
                 child: RaisedButton(
+<<<<<<< Updated upstream
                   onPressed: () {},
+=======
+                  onPressed: () {
+                    if (email == "teste@gmail.com" && password == "123456") {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Home()));
+                    }
+                  },
+>>>>>>> Stashed changes
                   child: Text("Login"),
                 ),
               ),
