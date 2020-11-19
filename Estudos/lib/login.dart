@@ -14,6 +14,58 @@ class _LoginState extends State<Login> {
   String email;
   String password;
 
+  // Aqui contém o campo de Input para o e-mail do formulário
+  Widget _inputEmail() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: TextField(
+        onChanged: (textoDigitado) {
+          email = textoDigitado;
+        },
+        autofocus: true,
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          labelText: "E-mail",
+          border: OutlineInputBorder(),
+        ),
+      ),
+    );
+  }
+
+  // Aqui contém o campo de Input para o password do formulário
+  Widget _inputPass() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: TextField(
+        onChanged: (textoDigitado) {
+          password = textoDigitado;
+        },
+        obscureText: true,
+        decoration: InputDecoration(
+          labelText: "Password",
+          border: OutlineInputBorder(),
+        ),
+      ),
+    );
+  }
+
+  // Aqui contém o botão de login
+  Widget _buttonLogin() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 30.0),
+      child: RaisedButton(
+        onPressed: () {
+          if (email == "teste@gmail.com" && password == "123456") {
+            // Redireciona para Home
+            Navigator.of(context).pushReplacementNamed('/home');
+          }
+        },
+        child: Text("Login"),
+      ),
+    );
+  }
+
+  // Aqui contém o body, inclusos logo, inputs e botão de login
   Widget _body() {
     return Container(
       child: Padding(
@@ -29,53 +81,20 @@ class _LoginState extends State<Login> {
             ),
             Container(height: 30),
             // Campo de e-mail
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: TextField(
-                onChanged: (textoDigitado) {
-                  email = textoDigitado;
-                },
-                autofocus: true,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: "E-mail",
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
+            _inputEmail(),
             // Campo de password
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: TextField(
-                onChanged: (textoDigitado) {
-                  password = textoDigitado;
-                },
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
+            _inputPass(),
             // Campo do botão de login
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 30.0),
-              child: RaisedButton(
-                onPressed: () {
-                  if (email == "teste@gmail.com" && password == "123456") {
-                    // Redireciona para Home
-                    Navigator.of(context).pushReplacementNamed('/home');
-                  }
-                },
-                child: Text("Login"),
-              ),
-            ),
+            _buttonLogin(),
           ],
         ),
       ),
     );
   }
 
+  /* Aqui retornamos a página de login para o main.dart e temos um Stack para
+  * utilizar um background image  
+  */
   @override
   Widget build(BuildContext context) {
     return Material(
