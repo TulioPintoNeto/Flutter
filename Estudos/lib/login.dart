@@ -3,36 +3,58 @@ import 'package:flutter/material.dart';
 class Login extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return LoginState();
+    return _LoginState();
   }
 }
 
-class LoginState extends State<Login> {
+class _LoginState extends State<Login> {
+  String email;
+  String password;
+
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: TextField(
-                autofocus: true,
-                decoration: InputDecoration(
-                  labelText: "E-mail",
-                  border: OutlineInputBorder(),
-                )),
+      child: Container(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: TextField(
+                    onChanged: (textoDigitado) {
+                      email = textoDigitado;
+                    },
+                    autofocus: true,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      labelText: "E-mail",
+                      border: OutlineInputBorder(),
+                    )),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: TextField(
+                    onChanged: (textoDigitado) {
+                      password = textoDigitado;
+                    },
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                      border: OutlineInputBorder(),
+                    )),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 30.0),
+                child: RaisedButton(
+                  onPressed: () {},
+                  child: Text("Login"),
+                ),
+              ),
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  border: OutlineInputBorder(),
-                )),
-          ),
-        ],
+        ),
       ),
     );
   }
