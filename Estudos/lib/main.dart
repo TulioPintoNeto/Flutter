@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-<<<<<<< Updated upstream
-//import 'home.dart';
-=======
->>>>>>> Stashed changes
+// Import do Login, lá está o import do Home que redireciona para ele
 import 'login.dart';
 
 void main() {
@@ -17,11 +14,10 @@ class MyApp extends StatelessWidget {
     // MaterialApp auxilia na estilização do aplicativo
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
-<<<<<<< Updated upstream
-      home: _Login(),
-=======
+      /* Aqui chamamos a tela de Login (é necessário mais tarde fazer uma 
+      *  verificação se já está logado para redirecionar para Home)
+      */
       home: Login(),
->>>>>>> Stashed changes
     );
   }
 }
