@@ -25,7 +25,22 @@ class HomeState extends State<Home> {
         automaticallyImplyLeading: false,
         iconTheme: IconThemeData(color: Colors.black87),
       ),
-      endDrawer: Drawer(),
+      endDrawer: Drawer(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 25.0),
+          child: Column(
+            children: [
+              ListTile(
+                leading: Icon(Icons.logout),
+                title: Text("Logout"),
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed('/');
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
