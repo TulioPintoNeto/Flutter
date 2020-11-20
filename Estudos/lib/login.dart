@@ -25,6 +25,7 @@ class _LoginState extends State<Login> {
         autofocus: true,
         keyboardType: TextInputType.emailAddress,
         cursorColor: Colors.white,
+        style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           labelText: "E-mail",
           border: OutlineInputBorder(),
@@ -46,6 +47,7 @@ class _LoginState extends State<Login> {
         },
         obscureText: true,
         cursorColor: Colors.white,
+        style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           labelText: "Password",
           border: OutlineInputBorder(),
@@ -70,7 +72,7 @@ class _LoginState extends State<Login> {
         },
         color: Colors.indigoAccent,
         child: Container(
-          width: 250,
+          width: 200,
           child: Text(
             "Login",
             textAlign: TextAlign.center,

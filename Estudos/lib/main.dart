@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // MaterialApp auxilia na estilização do aplicativo
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(),
       /* Aqui chamamos a tela de Login (é necessário mais tarde fazer uma 
       *  verificação se já está logado para redirecionar para Home)
       */
